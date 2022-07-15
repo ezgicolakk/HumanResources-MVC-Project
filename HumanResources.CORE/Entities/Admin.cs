@@ -13,10 +13,10 @@ namespace HumanResources.CORE.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
+        public string Email /*{ get { return FirstName + "." + LastName + "@" + "admin" + "." + "com"; } }*/ { get; set; }
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
-        [DisplayFormat(DataFormatString="{0:yyyy-MM-dd}", ApplyFormatInEditMode=true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
         public string Country { get; set; }
         public string ProfilePictureName { get; set; }
