@@ -1,4 +1,5 @@
-﻿using HumanResources.CORE.Enums;
+﻿using HumanResources.Core.Entities;
+using HumanResources.CORE.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

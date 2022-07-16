@@ -9,4 +9,9 @@
     <Folder Include="Concrete\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResources.CORE\HumanResources.CORE.csproj" />
+    <ProjectReference Include="..\HumanResources.DAL\HumanResources.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

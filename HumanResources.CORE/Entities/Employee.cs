@@ -1,5 +1,4 @@
-﻿using HumanResources.Core.Enums;
-using HumanResources.CORE.Entities;
+﻿using HumanResources.CORE.Entities;
 using HumanResources.CORE.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
