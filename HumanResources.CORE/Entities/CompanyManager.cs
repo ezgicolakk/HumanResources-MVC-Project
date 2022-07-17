@@ -1,4 +1,4 @@
-﻿using HumanResources.CORE.Entities;
+﻿using HumanResources.CORE.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -29,13 +29,14 @@ namespace HumanResources.Core.Entities
         [RegularExpression(@"^[a-zA-ZğüşöçıİĞÜŞÖÇ]+$", ErrorMessage = "Lütfen sayı ve özel karakter kullanmayınız.")]
         public string LastName { get; set; }
 
-        
-        //[Required(ErrorMessage = "Lütfen mail adresinizi giriniz.")]
-        //[Display(Name = "Email")]
+        //[Required]
+        [Required(ErrorMessage = "Lütfen mail adresinizi giriniz.")]
+        [Display(Name = "Email")]
         //[DataType(DataType.EmailAddress)]
-        //[RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
-        //ErrorMessage = "Lütfen mail adresinizi kontrol ediniz.")]
-        //public string Email { get { return FirstName + "." + LastName + "@" + Company.Name + "." + "com"; } }
+        [DataType(DataType.EmailAddress)]
+        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+        ErrorMessage = "Lütfen mail adresinizi kontrol ediniz.")]
+        public string Email { get { return FirstName + "." + LastName + "@" + Company.Name + "." + "com"; } }
 
         [Required]
         [Display(Name = "Adres")]
@@ -69,10 +70,11 @@ namespace HumanResources.Core.Entities
 
         //[Required]
         [Display(Name = "Kan Grubu")]
-        //public BloodType BloodType { get; set; }
+        public BloodType BloodType { get; set; }
 
-        
-        //[Display(Name = "Unvan")]
+        //[Required]
+        //[MaxLength(100, ErrorMessage = "Unvan en fazla 11 karakter olmalıdır.")]
+        [Display(Name = "Unvan")]
         [RegularExpression(@"^[a-zA-ZğüşöçıİĞÜŞÖÇ ]+$", ErrorMessage = "Lütfen sayı ve özel karakter kullanmayınız.")]
         public string JobTitle { get; set; }
 
@@ -92,8 +94,7 @@ namespace HumanResources.Core.Entities
         public IFormFile Photo { get; set; }
 
         // Nav Property
-        //public int CompanyId { get; set; }
-        //public Company Company { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }
-
