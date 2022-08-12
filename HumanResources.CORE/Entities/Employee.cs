@@ -1,5 +1,4 @@
-﻿using HumanResources.CORE.Entities;
-using HumanResources.CORE.Enums;
+﻿using HumanResources.Core.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace HumanResources.Core.Entities
         {
             Permissions = new HashSet<Permission>();
             Expenses = new HashSet<Expense>();
-            advancePayments = new HashSet<AdvancePayment>();
+            advancePayments= new HashSet<AdvancePayment>();
         }
         [MaxLength(50, ErrorMessage = "İsim en fazla 50 karakter olmalıdır.")]
         [Required(ErrorMessage = "Lütfen isminizi giriniz.")]
@@ -52,7 +51,7 @@ namespace HumanResources.Core.Entities
         //public string Email { get { return FirstName + "." + LastName + "@" + Company.Name + "." + "com"; } }
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [NotMapped]
+        [NotMapped] 
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
         public Gender Gender { get; set; }
@@ -61,13 +60,13 @@ namespace HumanResources.Core.Entities
         [MaxLength(200, ErrorMessage = "Adres en fazla 200 karakter olmalıdır.")]
         [DataType(DataType.MultilineText)]
         public string Address { get; set; }
-
+        
         [Display(Name = "Doğum Tarihi")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
 
-
+        
         [Display(Name = "İşe Giriş Tarihi")]
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
@@ -106,7 +105,7 @@ namespace HumanResources.Core.Entities
 
         public IEnumerable<Expense> Expenses { get; set; }
 
-        public IEnumerable<AdvancePayment> advancePayments { get; set; }
+        public IEnumerable<AdvancePayment>advancePayments { get; set; }
 
     }
 }

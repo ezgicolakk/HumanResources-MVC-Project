@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HumanResources.CORE.Enums
+namespace HumanResources.Core.Enums
 {
     public enum Gender
     {
-        [Display(Name ="Kadın")]
+        [Display(Name="Kadın")]
         Female,
-        [Display(Name ="Erkek")]
+        [Display(Name = "Erkek")]
         Male
     }
 }

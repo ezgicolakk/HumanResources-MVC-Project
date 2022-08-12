@@ -1,4 +1,4 @@
-﻿using HumanResources.CORE.Enums;
+﻿using HumanResources.Core.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace HumanResources.Core.Entities
         //[MaxLength(200, ErrorMessage = "Adres en fazla 200 karakter olmalıdır.")]
         [DataType(DataType.MultilineText)]
         [MaxLength(200, ErrorMessage = "Adres en fazla 200 karakter olmalıdır.")]
-
+        
         public string Address { get; set; }
 
         //[Required]

@@ -1,5 +1,4 @@
-﻿using HumanResources.CORE.Entities;
-using HumanResources.CORE.Enums;
+﻿using HumanResources.Core.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace HumanResources.Core.Entities
         {
             Users = new HashSet<User>();
             Packages = new HashSet<Package>();
-
+            
         }
 
         [Required(ErrorMessage = "Lütfen şirket ismi giriniz.")]
@@ -58,7 +57,7 @@ namespace HumanResources.Core.Entities
         [Display(Name = "Mersis Numarası")]
         public string MersisNo { get; set; }
 
-
+        
         public string PhotoPath { get; set; }
 
         [NotMapped]
@@ -78,7 +77,6 @@ namespace HumanResources.Core.Entities
         //public int WalletID { get; set; }
         [JsonIgnore]
         public Wallet Wallet { get; set; }
-
+        
     }
 }
-

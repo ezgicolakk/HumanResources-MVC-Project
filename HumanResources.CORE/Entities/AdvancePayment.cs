@@ -1,5 +1,4 @@
-﻿using HumanResources.Core.Entities;
-using HumanResources.CORE.Enums;
+﻿using HumanResources.Core.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HumanResources.CORE.Entities
+namespace HumanResources.Core.Entities
 {
     public class AdvancePayment:BaseEntity
     {
@@ -21,7 +20,7 @@ namespace HumanResources.CORE.Entities
         public PermissionStatus Status { get; set; } = PermissionStatus.Bekliyor;
         [Display(Name = "Talep Tarihi")]
         [DataType(DataType.Date)]
-        public DateTime CreateTime { get; set; } = DateTime.Now;
+        public DateTime CreateTime { get; set; }=DateTime.Now;
         public string FileName { get; set; }
         [NotMapped]
         public IFormFile File { get; set; }
@@ -29,5 +28,6 @@ namespace HumanResources.CORE.Entities
         //Nav Properties
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
+        
     }
 }

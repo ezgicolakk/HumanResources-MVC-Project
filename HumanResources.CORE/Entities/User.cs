@@ -1,5 +1,4 @@
-﻿using HumanResources.CORE.Enums;
-using HumanResources.CORE.Entities;
+﻿using HumanResources.Core.Enums;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -13,7 +12,7 @@ namespace HumanResources.Core.Entities
 {
     public class User : BaseEntity
     {
-
+        
         [MaxLength(50, ErrorMessage = "İsim en fazla 50 karakter olmalıdır.")]
         [Required(ErrorMessage = "Lütfen isminizi giriniz.")]
         [Display(Name = "İsim")]
@@ -25,7 +24,7 @@ namespace HumanResources.Core.Entities
         [RegularExpression(@"^[a-zA-ZğüşöçıİĞÜŞÖÇ]+$", ErrorMessage = "Lütfen sayı ve özel karakter kullanmayınız.")]
         public string? SecondName { get; set; }
 
-
+        
         [MaxLength(50, ErrorMessage = "Soyisim en fazla 50 karakter olmalıdır.")]
         [Required(ErrorMessage = "Lütfen isminizi giriniz.")]
         [Display(Name = "Soyisim")]
@@ -62,7 +61,7 @@ namespace HumanResources.Core.Entities
         [RegularExpression(@"^(\d{11})$", ErrorMessage = "TC Kimlik numarası 11 haneli olmalıdır.")]
         public string CitizenNo { get; set; }
 
-
+        
         [Display(Name = "Doğum Tarihi")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -99,4 +98,3 @@ namespace HumanResources.Core.Entities
         public string Role { get; set; } = "Manager";
     }
 }
-

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HumanResources.CORE.Enums
+namespace HumanResources.Core.Enums
 {
     public enum PermissionTypeMale
     {
@@ -20,6 +20,6 @@ namespace HumanResources.CORE.Enums
         [Display(Name = "Mazaret İzinleri")]
         MazeretIzinleri,
         [Display(Name = "Hastalık Ve İstirahat İzni")]
-        HastalikVeIstihrahatIzni
+        HastalikVeIstihrahatIzni,
     }
 }
